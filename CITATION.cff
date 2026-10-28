@@ -1,0 +1,105 @@
+cff-version: 1.2.0
+
+message: "If you use this excerpt, please cite both the excerpt and the main book using the metadata from this file."
+
+title: "Connections: neighbouring differences, distant likenesses - from The Toasty Book of Bread"
+
+type: article
+
+authors:
+
+  - family-names: "Welsh-Graham"
+
+    given-names: "Austin"
+
+    orcid: "https://orcid.org/0009-0001-2941-9329"
+
+    website: "https://www.austinatts.co.uk"
+
+doi: "10.5281/zenodo.23300441"
+
+url: "https://zenodo.org/doi/10.5281/zenodo.23300441"
+
+date-released: "2026-01-01"
+
+license: "CC-BY-SA-4.0"
+
+publisher:
+
+  name: "Independently published"
+
+keywords:
+
+  - "bread"
+
+  - "bread history"
+
+  - "food culture"
+
+  - "culinary heritage"
+
+  - "comparative food history"
+
+  - "flatbreads"
+
+  - "fermentation"
+
+  - "bread preservation"
+
+  - "food and migration"
+
+  - "illustrated essays"
+
+  - "Toasty Panetteria"
+
+abstract: >-
+
+  Connections: neighbouring differences, distant likenesses is a standalone excerpt from
+
+  The Toasty Book of Bread: An Illustrated Guide to the World's Greatest Loaves by Austin
+
+  Welsh-Graham, part of the Toasty Panetteria book series.
+
+preferred-citation:
+
+  type: book
+
+  title: "The Toasty Book of Bread: An Illustrated Guide to the World's Greatest Loaves"
+
+  authors:
+
+    - family-names: "Welsh-Graham"
+
+      given-names: "Austin"
+
+      orcid: "https://orcid.org/0009-0001-2941-9329"
+
+      website: "https://www.austinatts.co.uk"
+
+  publisher:
+
+    name: "Independently published"
+
+  year: 2026
+
+  edition: "1st"
+
+  identifiers:
+
+    - type: isbn
+
+      value: "979-8-1852-5111-9"
+
+      description: "Paperback edition"
+
+    - type: isbn
+
+      value: "979-8-1616-3430-1"
+
+      description: "Hardback edition"
+
+    - type: doi
+
+      value: "10.5281/zenodo.23300441"
+
+      description: "Connections excerpt DOI"
