@@ -1,0 +1,88 @@
+\ProvidesPackage{panetteria}
+\usepackage{fontspec}
+\setmainfont{NimbusRoman}[Extension=.otf,UprightFont=*-Regular,BoldFont=*-Bold,ItalicFont=*-Italic,BoldItalicFont=*-BoldItalic]
+\setsansfont{Latin Modern Sans}
+\usepackage{geometry}
+\geometry{paperwidth=177.8mm,paperheight=254mm,inner=23mm,outer=13mm,top=22mm,bottom=23mm,headheight=15pt}
+\usepackage{xcolor,colortbl,tikz,graphicx,booktabs,longtable,array,amsmath}
+\definecolor{Toast}{HTML}{FBBE75}
+\definecolor{Ink}{HTML}{302D3A}
+\definecolor{Cream}{HTML}{FFF5ED}
+\definecolor{Crust}{HTML}{B96530}
+\definecolor{Gold}{HTML}{FBBE75}
+\definecolor{Teal}{HTML}{8A421B}
+\definecolor{Purple}{HTML}{A95624}
+\usepackage[most]{tcolorbox}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{hyperref}
+\usepackage{xurl,needspace}
+\hypersetup{colorlinks=true,linkcolor=Ink,citecolor=Teal,urlcolor=Teal,pdftitle={The Toasty Book of Bread},pdfauthor={Austin Welsh-Graham}}
+\usepackage{bookmark}
+\usepackage{fancyhdr}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[LE,RO]{\small\itshape\nouppercase{\leftmark}}
+\fancyhead[LO,RE]{}
+\fancyfoot[LE,RO]{\sffamily\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\usepackage{titlesec}
+\titleformat{\chapter}[display]{\rmfamily\bfseries\color{Ink}}{\color{Teal}\small CHAPTER \thechapter}{7pt}{\Huge}
+\titlespacing*{\chapter}{0pt}{0pt}{22pt}
+\titleformat{\section}{\Large\rmfamily\bfseries\color{Ink}}{\thesection}{8pt}{}
+\titleformat{\subsection}{\large\rmfamily\bfseries\color{Ink}}{\thesubsection}{8pt}{}
+\setlength{\parindent}{0pt}\setlength{\parskip}{6pt}
+\setlength{\emergencystretch}{3em}
+\raggedbottom
+\let\cleardoublepage\clearpage
+\renewcommand{\bibfont}{\small}
+\newtcolorbox{breadnote}[1]{enhanced,breakable,colback=Cream,colframe=Toast,boxrule=.55pt,arc=2.5mm,left=4mm,right=4mm,top=2mm,bottom=2mm,colbacktitle=Toast,coltitle=Ink,fonttitle=\sffamily\bfseries,title={#1},titlerule=0pt,toptitle=1.5mm,bottomtitle=1.5mm,drop fuzzy shadow=Crust!12!white}
+\newcommand{\passport}[4]{\begin{breadnote}{Bread passport}\textbf{Place / community:} #1\\\textbf{Material:} #2\\\textbf{Process:} #3\\\textbf{Read alongside:} #4\end{breadnote}}
+\newcommand{\plate}[2]{\begin{center}\begin{tikzpicture}\path[use as bounding box] (-2.3,-1.25) rectangle (2.3,1.25);\begin{scope}[scale=.65]\csname icon#1\endcsname\end{scope}\end{tikzpicture}\\[-2pt]{\small\sffamily\color{Teal}#2}\end{center}}
+\input{art/bread-icons.tex}
+
+\setcounter{secnumdepth}{0}
+\newcommand{\recipehead}[4]{\clearpage\section{#1}\label{recipe:#2}\begin{breadnote}{At a glance}\textbf{Makes:} #3\\\textbf{Time and equipment:} #4\end{breadnote}}
+\newenvironment{ingredients}{\begingroup\arrayrulecolor{Crust!65!white}\rowcolors{2}{Cream}{white}\begin{tabular}{@{\hspace{2mm}}p{.64\linewidth}r@{\hspace{2mm}}}\toprule\rowcolor{Toast}\textbf{Ingredient}&\textbf{Quantity}\\\midrule}{\\\bottomrule\end{tabular}\endgroup\par\medskip}
+\newcommand{\regionline}[1]{{\sffamily\color{Teal}#1\par}}
+
+\setlength{\parskip}{4pt}
+\setcounter{tocdepth}{0}
+\titlespacing*{\section}{0pt}{12pt}{6pt}
+\titlespacing*{\subsection}{0pt}{9pt}{4pt}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\tcbset{top=2mm,bottom=2mm}
+
+\renewcommand{\recipehead}[4]{\clearpage\section{#1}\label{recipe:#2}\textbf{Makes:} #3\par{\small\sffamily\color{Teal}#4\par}\medskip}
+\setlength{\bibsep}{4pt}
+
+\input{art/connections.tex}
+
+% List all rendered compositions without changing their placement or artwork.
+\newif\ifatlasbook
+\atlasbookfalse
+\newcounter{atlasfigure}
+\newcommand{\AtlasFigureTitle}{Illustration}
+\newcommand{\atlasfiguretitle}[1]{\gdef\AtlasFigureTitle{#1}}
+\newcommand{\atlasrecord}{\ifatlasbook\refstepcounter{atlasfigure}\addcontentsline{lof}{figure}{\protect\numberline{\theatlasfigure}\AtlasFigureTitle}\fi}
+\BeforeBeginEnvironment{tikzpicture}{\atlasrecord}
+\renewcommand{\listfigurename}{Table of figures}
+\makeatletter
+\renewcommand*{\l@figure}{\@dottedtocline{1}{0pt}{2.8em}}
+\makeatother
+
+% Reference-guided typographic polish, retaining the original Toasty artwork.
+\linespread{1.06}
+\usepackage{microtype}
+\widowpenalty=10000\clubpenalty=10000
+\fancypagestyle{plain}{\fancyhf{}\fancyfoot[LE,RO]{\small\thepage}\renewcommand{\headrulewidth}{0pt}}
+\newcommand{\licensebadge}{\includegraphics[width=30mm]{art/cc-by-sa.pdf}}
+
+\usepackage{newunicodechar}
+\newfontfamily\schwafont{DejaVuSerif.ttf}[BoldFont=DejaVuSerif-Bold.ttf,ItalicFont=DejaVuSerif.ttf,BoldItalicFont=DejaVuSerif-Bold.ttf]
+\newunicodechar{ə}{{\schwafont\char"0259}}
+
+\input{art/redrawn-assets.tex}
+
+\hypersetup{pdfsubject={Production revision 0.13.7}}
+
+\arrayrulecolor{Crust!65!white}
+\AtBeginEnvironment{longtable}{\rowcolors{2}{Cream}{white}}
