@@ -1,0 +1,7 @@
+% Original comparison layouts. Bread portraits reuse the atlas's editable artwork.
+\newcommand{\comparisonplate}[3]{\begin{center}\begin{tikzpicture}
+\fill[Cream,rounded corners=10pt] (-5,-1.25) rectangle (5,1.25);
+\begin{scope}[shift={(-2.55,0)},scale=.72]\csname icon#1\endcsname\end{scope}
+\begin{scope}[shift={(2.55,0)},scale=.72]\csname icon#2\endcsname\end{scope}
+\draw[Teal!35,line width=1pt] (0,-.75)--(0,.75);
+\end{tikzpicture}\par{\small\sffamily\color{Teal}#3\par}\end{center}}
