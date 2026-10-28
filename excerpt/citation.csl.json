@@ -1,0 +1,26 @@
+[
+  {
+    "id": "10.5281/zenodo.23300441",
+    "type": "chapter",
+    "title": "Connections: neighbouring differences, distant likenesses",
+    "container-title": "The Toasty Book of Bread: An Illustrated Guide to the World's Greatest Loaves",
+    "collection-title": "Toasty Panetteria book series",
+    "author": [
+      {
+        "given": "Austin",
+        "family": "Welsh-Graham"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    },
+    "publisher": "Independently published",
+    "DOI": "10.5281/zenodo.23300441",
+    "URL": "https://doi.org/10.5281/zenodo.23300441",
+    "note": "Standalone excerpt from revision 0.13.7"
+  }
+]
